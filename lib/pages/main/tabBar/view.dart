@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../theme/config/style_25/tabBar.dart';
 import '../../../theme/variables/custom.dart';
 
+/// 生成底部导航栏列表
 List<BottomNavigationBarItem> buildBarItems(BuildContext context) {
   final colors = Theme.of(context).extension<CustomColors>();
 
@@ -16,7 +17,7 @@ List<BottomNavigationBarItem> buildBarItems(BuildContext context) {
   }).toList();
 }
 
-/// 为“交易”图标构建带角标的特殊Widget
+/// 构建底部导航栏图标(带角标)
 Widget _buildTradeIconWithBadge(String iconPath, Color? iconColor) {
   return Stack(
     clipBehavior: Clip.none,

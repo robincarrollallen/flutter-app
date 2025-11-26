@@ -41,7 +41,7 @@ dependencies:
 
   get_storage: ^2.1.1 # 数据持久化<轻量>
 
-
+  flutter_screenutil: ^5.9.3 # 宽高自适应
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +59,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  # 静态文件
+  assets:
+    - assets/svg/tabBar/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

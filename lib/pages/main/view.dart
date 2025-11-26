@@ -1,8 +1,9 @@
-import 'package:flutter_app/i18n/type.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../theme/variables/custom.dart';
 import '../../common/logic.dart';
+import '../../i18n/type.dart';
 import 'home/view.dart';
 import 'tabBar/view.dart';
 import 'profile/view.dart';
@@ -65,15 +66,27 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       extendBody: true,
       body: IndexedStack(
-          index: _selectedIndex,
-          children: tabViewList
+        index: _selectedIndex,
+        children: tabViewList
       ), /// 页面显示主体
-      bottomNavigationBar: BottomNavigationBar( /// 原生底部导航栏
-        items: buildBarItems(context), /// 导航栏元素
-        currentIndex: _selectedIndex, /// 当前选中项
-        type: BottomNavigationBarType.fixed, /// 导航栏类型(显示label)
-        onTap: _onItemTapped, /// 点击事件
-        backgroundColor: colors?.footbar,
+      bottomNavigationBar: Stack(
+        children: [
+          Positioned.fill(
+            child: SvgPicture.asset(
+              'assets/svg/tabBar/bg-25.svg',
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.topLeft,
+            ),
+          ),
+          BottomNavigationBar(
+            items: buildBarItems(context),
+            currentIndex: _selectedIndex,
+            type: BottomNavigationBarType.fixed,
+            onTap: _onItemTapped,
+            backgroundColor: Colors.transparent, // 必须设置为透明，才能看到下方的背景
+            elevation: 0, // 移除阴影以获得更好的视觉效果
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 0.0,

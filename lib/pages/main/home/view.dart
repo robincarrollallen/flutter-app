@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_app/utils/screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   final OverlayState? overlayState;
@@ -66,10 +67,17 @@ class _HomePageState extends State<HomePage> {
         title: Text('关于'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-
-        ]
+      body: Container(
+        color: Colors.blue,
+        child: Center(
+          child: Text(
+            '自适应文字',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24.rem(), // 使用 .sp 替代 24
+            ),
+          ),
+        ),
       )
     );
   }
