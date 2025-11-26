@@ -35,6 +35,14 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+  flutter_svg: ^2.2.3 # 矢量图
+
+  get: ^4.7.3 # getX库
+
+  get_storage: ^2.1.1 # 数据持久化<轻量>
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
