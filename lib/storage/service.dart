@@ -1,6 +1,6 @@
 
 import 'package:get/get.dart';
-import './persistent.dart'; // 导入我们创建的类
+import './persistent.dart';
 
 class StorageService extends GetxService {
 

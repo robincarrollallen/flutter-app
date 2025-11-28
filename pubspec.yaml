@@ -61,7 +61,9 @@ dev_dependencies:
 flutter:
   # 静态文件
   assets:
+    - assets/svg/
     - assets/svg/tabBar/
+    - assets/icons/tabBar/tab/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_app/utils/screen.dart';
 import '../../../theme/config/style_25/tabBar.dart';
 import '../../../theme/variables/custom.dart';
 
@@ -22,12 +22,11 @@ Widget _buildTradeIconWithBadge(String iconPath, Color? iconColor) {
   return Stack(
     clipBehavior: Clip.none,
     children: [
-      SvgPicture.asset(
+      iconPath.isEmpty ? Container() : Image.asset(
         iconPath,
-        width: 22,
-        colorFilter: ColorFilter.mode(iconColor ?? Colors.grey, BlendMode.srcIn),
+        width: 32.rem(),
       ),
-      Positioned(
+      iconPath.isEmpty ? Container() : Positioned(
         top: -6.0,
         right: -10.0,
         child: Container(
@@ -41,7 +40,7 @@ Widget _buildTradeIconWithBadge(String iconPath, Color? iconColor) {
             minHeight: 12,
           ),
           child: const Text(
-            '101',
+            '0',
             style: TextStyle(
               color: Colors.white,
               fontSize: 8,

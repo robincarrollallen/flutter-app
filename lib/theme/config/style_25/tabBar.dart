@@ -13,28 +13,28 @@ class TabBarItem {
 /// 底部导航栏元素列表
 final List<TabBarItem> items = [
   TabBarItem(
-    icon: 'assets/images/svg/home-outline.svg',
-    activeIcon: 'assets/images/svg/home-filled.svg',
+    icon: 'assets/icons/tabBar/tab/home-25.webp',
+    activeIcon: 'assets/icons/tabBar/tab/home-active-25.webp',
     label: 'home',
   ),
   TabBarItem(
-    icon: 'assets/images/svg/search-outline.svg',
-    activeIcon: 'assets/images/svg/search-filled.svg',
+    icon: 'assets/icons/tabBar/tab/promo-25.webp',
+    activeIcon: 'assets/icons/tabBar/tab/promo-active-25.webp',
     label: 'market',
   ),
   TabBarItem(
-    icon: 'assets/images/svg/search-outline.svg',
-    activeIcon: 'assets/images/svg/search-filled.svg',
-    label: 'trade',
+    icon: '',
+    activeIcon: '',
+    label: '',
   ),
   TabBarItem(
-    icon: 'assets/images/svg/message-outline.svg',
-    activeIcon: 'assets/images/svg/message-filled.svg',
+    icon: 'assets/icons/tabBar/tab/enter-25.webp',
+    activeIcon: 'assets/icons/tabBar/tab/enter-active-25.webp',
     label: 'favorite',
   ),
   TabBarItem(
-    icon: 'assets/images/svg/user-outline.svg',
-    activeIcon: 'assets/images/svg/user-filled.svg',
+    icon: 'assets/icons/tabBar/tab/profile-25.webp',
+    activeIcon: 'assets/icons/tabBar/tab/profile-active-25.webp',
     label: 'mine',
   ),
 ];
