@@ -33,6 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
   final state = Get.find<CommonLogic>().state;
 
   void _onItemTapped(int index) { /// 点击导航栏触发的方法
+    if (index == 2) {
+      return;
+    }
     setState(() {
       _selectedIndex = index;
     });
@@ -52,9 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     tabViewList = [
       HomePage(scaffoldKey: _scaffoldKey), // 将 key 传给 HomePage
-      ActivityPage(overlayState),
-      PromotionPage(overlayState),
-      DepositPage(overlayState),
+      ActivityPage(),
+      PromotionPage(),
+      DepositPage(),
       ProfilePage(),
     ];
   }
@@ -145,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 120.0.rem(),
           child: GestureDetector(
             onTap: () { Get.updateLocale(LOCALE.enUS.locale); },
-            behavior: HitTestBehavior.translucent,
+            behavior: HitTestBehavior.opaque,
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(

@@ -1,11 +1,14 @@
 import 'dart:math';
+import 'package:flutter_app/pages/main/home/modules/jackpot/view.dart';
+import 'package:flutter_app/pages/main/home/modules/swiper/view.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/main/home/modules/sign/view.dart';
 import '../../../theme/variables/custom.dart';
 import '../../../utils/screen.dart';
 import 'logic.dart';
+import 'modules/sign/view.dart';
 import 'modules/navBar/view.dart';
+import 'modules/marquee/view.dart';
 
 class HomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -40,7 +43,10 @@ class HomePage extends StatelessWidget {
               SliverToBoxAdapter(
                 child: Column(
                   children: [
-                    SignView()
+                    SignView(),
+                    SwiperView(),
+                    MarqueeView(),
+                    JackpotView(),
                   ]
                 )
               ),
@@ -101,15 +107,14 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => max(maxHeight, minHeight);
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build( BuildContext context, double shrinkOffset, bool overlapsContent) {
     return SizedBox.expand(child: child);
   }
 
   @override
   bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
     return maxHeight != oldDelegate.maxHeight ||
-        minHeight != oldDelegate.minHeight ||
-        child != oldDelegate.child;
+      minHeight != oldDelegate.minHeight ||
+      child != oldDelegate.child;
   }
 }

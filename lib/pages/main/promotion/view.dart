@@ -1,71 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class PromotionPage extends StatefulWidget {
-  final OverlayState? overlayState;
-  const PromotionPage(this.overlayState, {super.key});
+import 'logic.dart';
 
-  @override
-  State<PromotionPage> createState() => _PromotionPageState();
-}
-
-class _PromotionPageState extends State<PromotionPage> {
-  final FocusNode focusNode = FocusNode();
-  final GlobalKey globalKey = GlobalKey();
-  late OverlayEntry overlayEntry;
-  RenderBox? renderBox;
-
-  @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      renderBox = globalKey.currentContext?.findRenderObject() as RenderBox;
-      overlayEntry = createOverlayEntry();
-    });
-    focusNode.addListener(() {
-      if (focusNode.hasFocus) {
-        widget.overlayState?.insert(overlayEntry);
-      } else {
-        overlayEntry.remove();
-      }
-    });
-
-    super.initState();
-  }
-
-  OverlayEntry createOverlayEntry() {
-    var size = renderBox?.size;
-    var offset = renderBox?.localToGlobal(Offset.zero);
-    return OverlayEntry(
-        builder: (context) => Positioned(
-          left: offset?.dx,
-          top: offset!.dy + size!.height + 5.0,
-          width: size.width,
-          child: Material(
-            elevation: 4.0,
-            child: ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              children: <Widget>[
-                ListTile(
-                  title: Text('Syria'),
-                ),
-                ListTile(
-                  title: Text('Lebanon'),
-                )
-              ],
-            ),
-          ),
-        )
-    );
-  }
+class PromotionPage extends StatelessWidget {
+  const PromotionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      key: globalKey,
-      focusNode: focusNode,
-      decoration: InputDecoration(
-          labelText: '交易'
-      ),
-    );
+    final logic = Get.put(PromotionLogic());
+    final state = Get.find<PromotionLogic>().state;
+
+    return GetBuilder<PromotionLogic>(builder: (logic) {
+      return Scaffold(
+          body: Stack(
+            children: [
+
+            ],
+          )
+      );
+    });
   }
 }

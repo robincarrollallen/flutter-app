@@ -43,6 +43,12 @@ dependencies:
 
   flutter_screenutil: ^5.9.3 # 宽高自适应
 
+  carousel_slider: ^5.1.1 # 轮播组件
+
+  number_flow: ^1.0.4 # 数值计算动画
+
+  intl: ^0.20.2 # 格式化
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -63,7 +69,10 @@ flutter:
   assets:
     - assets/svg/
     - assets/svg/tabBar/
+    - assets/icons/home/
     - assets/icons/tabBar/tab/
+    - assets/images/home/
+    - assets/mock/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

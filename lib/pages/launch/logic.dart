@@ -7,7 +7,6 @@ class LaunchLogic extends GetxController {
   void onReady() {
     super.onReady();
 
-    print('>>>>>>>>>>>>>');
     Get.offAllNamed('');
   }
 }

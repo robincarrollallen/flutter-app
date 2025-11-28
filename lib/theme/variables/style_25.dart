@@ -3,6 +3,8 @@ import './custom.dart';
 
 final ThemeData style25 = ThemeData.dark().copyWith(
   primaryColor: Colors.red,
+  splashColor: Colors.transparent, // 点击波纹颜色
+  highlightColor: Colors.transparent, // 点击高亮底色
   scaffoldBackgroundColor: Colors.black,
   appBarTheme: const AppBarTheme(
     backgroundColor: Color.fromRGBO(18, 23, 19, 1)
@@ -24,9 +26,11 @@ final ThemeData style25 = ThemeData.dark().copyWith(
     const CustomColors(
       textDefault: Color.fromRGBO(255, 255, 255, 1),
       borderDefault: Color(0xFF1C2334),
+      textWeak: Color.fromRGBO(255, 255, 255, .6),
       textSuccess: Colors.green,
       textWarning: Colors.yellow,
       footbar: Color.fromRGBO(10, 13, 10, 1),
+      surfaceRaisedL2: Color.fromRGBO(23, 33, 23, 1),
       navigationDefault: Color.fromRGBO(255, 255, 255, .4),
       navigationSelected: Color.fromRGBO(255, 255, 255, 1),
       topNavSecondary: Color.fromRGBO(18, 23, 19, 1),
@@ -34,6 +38,7 @@ final ThemeData style25 = ThemeData.dark().copyWith(
       gradientsPrimaryB: Color.fromRGBO(25, 204, 16, 1),
       btnLevel2Border: Color.fromRGBO(25, 204, 16, 1),
       btnLevel3Border: Color.fromRGBO(255, 199, 84, 1),
+      iconBrandPrimary: Color.fromRGBO(25, 204, 16, 1),
       inverse500: Color.fromRGBO(255, 171, 0, 1),
       inverse600: Color.fromRGBO(232, 156, 0, 1),
     ),
