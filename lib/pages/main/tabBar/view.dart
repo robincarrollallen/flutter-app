@@ -24,7 +24,7 @@ Widget _buildTradeIconWithBadge(String iconPath, Color? iconColor) {
     children: [
       iconPath.isEmpty ? Container() : Image.asset(
         iconPath,
-        width: 32.rem(),
+        width: 30.rem(),
       ),
       iconPath.isEmpty ? Container() : Positioned(
         top: -6.0,

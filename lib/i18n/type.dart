@@ -2,7 +2,7 @@ import 'dart:ui';
 
 /// 主题枚举
 enum LOCALE {
-  zhCN('zh_CN', Locale('zh', 'CN')),
+  ptBR('pt-BR', Locale('pt', 'BR')),
   enUS('en_US', Locale('en', 'US'));
 
   final String code;

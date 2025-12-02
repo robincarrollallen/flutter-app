@@ -207,10 +207,13 @@ class _MarqueeTextState extends State<MarqueeText>
       // if container width changed, update and optionally restart
       if (cw != _containerWidth) {
         _containerWidth = cw;
-        // if currently running, recompute durations and restart
-        if (widget.autoScroll && _isRunning) {
-          _startAnimationForCurrent();
-        }
+        // 使用 addPostFrameCallback 将调用推迟到下一帧
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          // if currently running, recompute durations and restart
+          if (mounted && widget.autoScroll && _isRunning) {
+            _startAnimationForCurrent();
+          }
+        });
       }
 
       final currentText = widget.texts.isNotEmpty

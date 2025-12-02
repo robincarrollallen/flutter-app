@@ -1,17 +1,17 @@
 import 'dart:ui';
 
 import 'package:get/get.dart';
-
-import '../theme/index.dart';
-import '../theme/type.dart';
+import '/model/tenant_info_model.dart';
+import '/theme/index.dart';
+import '/theme/type.dart';
 
 class CommonState {
-  final token = 'zh'.obs; // 令牌
-  final locale = Locale('zh', 'CN').obs;
+  final token = ''.obs; // 令牌
+  final locale = Locale('en', 'US').obs;
   final currentTheme = themes[THEME.style25.key].obs; // 当前主题
+  final tenantInfo = TenantInfoModel().obs;
 
   void setToken(String newToken) {
-    // 可以在这里添加验证逻辑∂
     token.value = newToken;
   }
 
@@ -22,5 +22,9 @@ class CommonState {
   void setLocale(Locale lang) {
     Get.updateLocale(lang);
     locale.value = lang;
+  }
+
+  void setTenantInfo(TenantInfoModel info) {
+    tenantInfo.value = info;
   }
 }

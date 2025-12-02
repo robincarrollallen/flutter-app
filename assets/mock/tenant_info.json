@@ -1,0 +1,238 @@
+{
+  "withdrawPasswordAuthMethod": "NONE",
+  "id": 9390494,
+  "name": "bc",
+  "enabled": true,
+  "skinType": "Layout2",
+  "skinTwoType": "Layout2:SupremeGreen",
+  "homeType": "Platform",
+  "region": {
+    "id": 9,
+    "name": "巴西",
+    "timezone": "Etc/GMT+3",
+    "currency": "BRL",
+    "language": "pt-BR",
+    "rechargeRatio": 10000,
+    "phoneCode": "+55",
+    "code": "BR",
+    "withdrawalConfig": "WithdrawFirst"
+  },
+  "siteName": "bc11",
+  "appIcon": "https://upload-us.b83.xyz/1719570695193/Snipaste.png",
+  "siteLogo": "https://upload-us.b83.xyz/1718364626528/bc25d0d2-1ccc-48c0-9dc5-0bcb132b5d0e.png",
+  "paymentPartnerPic": "https://uploads4sys-dev.po7.xyz/rechargePartner/rechargePD_Layout2NeoBlue.png",
+  "appLanguage": [
+    "en-US",
+    "pt-BR"
+  ],
+  "appDefaultLanguage": "en-US",
+  "pwaInstallType": "own",
+  "jpushAppKey": "bd6cf3a525a61e19bc6f2b92",
+  "reportTimeRange": 7,
+  "gamePartnerPic": "https://uploads4sys-dev.po7.xyz/gamePartnerConfig/gamePartner_PineGreenV01.png",
+  "openNoticeTextType": "Default",
+  "openNoticeText": "",
+  "sidebarBannerStyle": "style1",
+  "gameLogoStyle": "style2",
+  "gameLogoLanguage": "en",
+  "homeVideoSwitch": "ON",
+  "homeVideoUrl": "https://upload-dev.b83.xyz/s1/1750656224602/Vittoria.mp4",
+  "homeNavType": "GameType",
+  "allowUserChangePassword": true,
+  "allowChangeAssetPassword": false,
+  "allowChangePhone": false,
+  "allowChangeEmail": false,
+  "allowEmailPhoneLogin": false,
+  "registerBindGcashMaya": false,
+  "needAge": false,
+  "buttonShowAmount": "11",
+  "rewardSwitch": true,
+  "switch": true,
+  "background": "https://uploads4sys-dev.po7.xyz/activityStar/skinConfig/SKIN_8.png",
+  "previewText": "",
+  "target": {
+    "type": "internal",
+    "targetValue": {
+      "type": "promotion",
+      "info": "string"
+    }
+  },
+  "prizePoolValuesList": [
+    {
+      "time": 1755258180000,
+      "prizePoolValue": 287335228
+    },
+    {
+      "time": 1755258183000,
+      "prizePoolValue": 287375877
+    },
+    {
+      "time": 1755258186000,
+      "prizePoolValue": 287393842
+    },
+    {
+      "time": 1755258189000,
+      "prizePoolValue": 287403299
+    },
+    {
+      "time": 1755258192000,
+      "prizePoolValue": 287439725
+    },
+    {
+      "time": 1755258195000,
+      "prizePoolValue": 287480286
+    },
+    {
+      "time": 1755258198000,
+      "prizePoolValue": 287527270
+    },
+    {
+      "time": 1755258201000,
+      "prizePoolValue": 287544177
+    },
+    {
+      "time": 1755258204000,
+      "prizePoolValue": 287549665
+    },
+    {
+      "time": 1755258207000,
+      "prizePoolValue": 287572464
+    },
+    {
+      "time": 1755258210000,
+      "prizePoolValue": 287590405
+    },
+    {
+      "time": 1755258213000,
+      "prizePoolValue": 287596433
+    },
+    {
+      "time": 1755258216000,
+      "prizePoolValue": 287644111
+    },
+    {
+      "time": 1755258219000,
+      "prizePoolValue": 287669098
+    },
+    {
+      "time": 1755258222000,
+      "prizePoolValue": 287680079
+    },
+    {
+      "time": 1755258225000,
+      "prizePoolValue": 287687200
+    },
+    {
+      "time": 1755258228000,
+      "prizePoolValue": 287722130
+    },
+    {
+      "time": 1755258231000,
+      "prizePoolValue": 287736044
+    },
+    {
+      "time": 1755258234000,
+      "prizePoolValue": 287785124
+    },
+    {
+      "time": 1755258237000,
+      "prizePoolValue": 287814484
+    },
+    {
+      "time": 1755258240000,
+      "prizePoolValue": 287838061
+    },
+    {
+      "time": 1755258243000,
+      "prizePoolValue": 287845557
+    },
+    {
+      "time": 1755258246000,
+      "prizePoolValue": 287872851
+    },
+    {
+      "time": 1755258249000,
+      "prizePoolValue": 287906325
+    },
+    {
+      "time": 1755258252000,
+      "prizePoolValue": 287920533
+    },
+    {
+      "time": 1755258255000,
+      "prizePoolValue": 287949114
+    },
+    {
+      "time": 1755258258000,
+      "prizePoolValue": 287961621
+    },
+    {
+      "time": 1755258261000,
+      "prizePoolValue": 287971889
+    },
+    {
+      "time": 1755258264000,
+      "prizePoolValue": 288000667
+    },
+    {
+      "time": 1755258267000,
+      "prizePoolValue": 288006304
+    },
+    {
+      "time": 1755258270000,
+      "prizePoolValue": 288028429
+    },
+    {
+      "time": 1755258273000,
+      "prizePoolValue": 288057737
+    },
+    {
+      "time": 1755258276000,
+      "prizePoolValue": 288066785
+    },
+    {
+      "time": 1755258279000,
+      "prizePoolValue": 288113517
+    },
+    {
+      "time": 1755258282000,
+      "prizePoolValue": 288155112
+    },
+    {
+      "time": 1755258285000,
+      "prizePoolValue": 288199087
+    },
+    {
+      "time": 1755258288000,
+      "prizePoolValue": 288247074
+    },
+    {
+      "time": 1755258291000,
+      "prizePoolValue": 288281751
+    },
+    {
+      "time": 1755258294000,
+      "prizePoolValue": 288313011
+    },
+    {
+      "time": 1755258297000,
+      "prizePoolValue": 288360862
+    },
+    {
+      "time": 1755258300000,
+      "prizePoolValue": 288379251
+    }
+  ],
+  "announcementPopupWay": "one",
+  "announcementLabelStyle": "bottom",
+  "gameLogoUrl": "https://game-logo.d-e-7-f.com/pre",
+  "currencySymbol": "fiat",
+  "avatarBucket": {
+    "url": "https://upload-dev.b83.xyz/avatar/",
+    "female": "20",
+    "male": "20"
+  },
+  "rankConfig": {
+    "userRankSwitch": true
+  }
+}

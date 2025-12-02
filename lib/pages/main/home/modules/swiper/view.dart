@@ -58,7 +58,11 @@ class SwiperView extends StatelessWidget {
             ),
             Positioned(
               right: 10.0.rem(),
-              child: Image.asset('assets/icons/home/badge-banner.webp'),
+              child: Image.asset(
+                'assets/icons/home/badge-banner.webp',
+                width: 54.0.rem(),
+                height: 54.0.rem(),
+              ),
             )
           ]
         );

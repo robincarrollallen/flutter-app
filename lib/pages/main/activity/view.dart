@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter/material.dart';
+import '/theme/variables/custom.dart';
 import 'logic.dart';
 
 class ActivityPage extends StatelessWidget {
@@ -8,16 +8,33 @@ class ActivityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final logic = Get.put(ActivityLogic());
-    final state = Get.find<ActivityLogic>().state;
+    final colors = Theme.of(context).extension<CustomColors>(); // 主题颜色<扩展>
 
-    return GetBuilder<ActivityLogic>(builder: (logic) {
+    return GetBuilder<ActivityLogic>(
+      init: ActivityLogic(),
+      builder: (logic)
+    {
       return Scaffold(
-          body: Stack(
-            children: [
-
-            ],
-          )
+        appBar: AppBar(
+          elevation: 0, // 取消阴影
+          titleSpacing: 0, // 取消两侧内边距
+          title: TabBar(
+            dividerColor: Colors.transparent,
+            controller: logic.tabController, // 取消底部边框线
+            tabs: logic.tabs,
+            isScrollable: true,
+            labelStyle: const TextStyle(fontWeight: FontWeight.bold),
+            tabAlignment: TabAlignment.start,
+            indicatorColor: colors?.textSelected,
+            labelColor: colors?.textSelected,
+            unselectedLabelColor: colors?.textWeak,
+            unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
+          ),
+        ),
+        body: TabBarView(
+          controller: logic.tabController,
+          children: logic.tabViews
+        ),
       );
     });
   }

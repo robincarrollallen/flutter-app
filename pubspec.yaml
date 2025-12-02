@@ -72,6 +72,7 @@ flutter:
     - assets/icons/home/
     - assets/icons/tabBar/tab/
     - assets/images/home/
+    - assets/sprite/
     - assets/mock/
 
   # The following line ensures that the Material Icons font is

@@ -16,48 +16,52 @@ class JackpotView extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<CustomColors>();
 
-    return Column(
-      spacing: 10.0.rem(),
-      children: [
-        TopBorder(),
-        Row(
-          spacing: 10.0.rem(),
-          children: [
-            Image.asset(
-              'assets/images/home/bonus-25.webp',
-              width: 88.0.rem(),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Jackpot', style: TextStyle(fontSize: 14.0.rem(), color: colors?.textWeak)),
-                  SizedBox(
-                    height: 58.0.rem(),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Obx(() => NumberFlow(
-                        value: state.bonusValue.value,
-                        animated: true,                           // 保留动画
-                        startFromZero: false,                     // 不每次从 0 开始
-                        decimalPlaces: 2,                         // 保留小数
-                        useGroupSeparator: true,                  // 千分位
-                        // notation: NumberNotation.standard,     // 标准计数
-                        // spinDuration: Duration.zero,           // 禁止滚动动画
-                        // opacityDuration: Duration.zero,        // 禁止淡入淡出
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ))
+    return Padding(
+      padding: EdgeInsetsGeometry.symmetric(horizontal: 12.0.rem()),
+      child: Column(
+        spacing: 10.0.rem(),
+        children: [
+          TopBorder(),
+          Row(
+            spacing: 10.0.rem(),
+            children: [
+              Image.asset(
+                'assets/images/home/bonus-25.webp',
+                width: 88.0.rem(),
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Jackpot', style: TextStyle(fontSize: 14.0.rem(), color: colors?.textWeak)),
+                    SizedBox(
+                      height: 58.0.rem(),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Obx(() => NumberFlow(
+                          value: state.bonusValue.value,
+                          animated: true,                           // 保留动画
+                          startFromZero: false,                     // 不每次从 0 开始
+                          decimalPlaces: 2,                         // 保留小数
+                          useGroupSeparator: true,                  // 千分位
+                          // notation: NumberNotation.standard,     // 标准计数
+                          // spinDuration: Duration.zero,           // 禁止滚动动画
+                          // opacityDuration: Duration.zero,        // 禁止淡入淡出
+                          style: TextStyle(
+                            fontSize: 32.0.rem(),
+                            fontWeight: FontWeight.bold,
+                            color: colors?.textBrandPrimary
+                          ),
+                        ))
+                      )
                     )
-                  )
-                ]
+                  ]
+                )
               )
-            )
-          ]
-        )
-      ],
+            ]
+          )
+        ],
+      ),
     );
   }
 }

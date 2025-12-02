@@ -1,4 +1,4 @@
-Map<String, String> zhCN = {
+Map<String, String> ptBR = {
   'favorite': '自选',
   'market': '市场',
   'trade': '交易',

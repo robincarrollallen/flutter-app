@@ -33,7 +33,6 @@ class JackpotLogic extends GetxController {
       double result = lastNineDigits / 100.0; // 除以100，得到浮点数
 
       state.setBonusValue(result); // 设置奖金池金额
-      print('处理后的数字: $result');
     });
   }
 }

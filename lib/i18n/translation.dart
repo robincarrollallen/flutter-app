@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
 import 'locale/en_us.dart';
-import 'locale/zh_cn.dart';
-
+import 'locale/pt_br.dart';
 
 class AppTranslations extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-    'zh_CN': zhCN,
+    'pt_BR': ptBR,
     'en_US': enUS,
   };
 }

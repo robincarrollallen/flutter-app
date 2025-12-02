@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../theme/variables/custom.dart';
-import '../../utils/screen.dart';
-import '../../common/logic.dart';
-import '../../i18n/type.dart';
+import '/theme/variables/custom.dart';
+import '/utils/screen.dart';
+import '/common/logic.dart';
+import '/i18n/type.dart';
 import 'home/view.dart';
 import 'tabBar/view.dart';
 import 'profile/view.dart';
@@ -52,9 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
     overlayState = Overlay.of(context);
 
     /// 获取 overlay 状态
-
     tabViewList = [
-      HomePage(scaffoldKey: _scaffoldKey), // 将 key 传给 HomePage
+      HomePage(scaffoldKey: _scaffoldKey), // 将 key 传给 HomePage <控制抽屉开关>
       ActivityPage(),
       PromotionPage(),
       DepositPage(),
@@ -80,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       key: _scaffoldKey,
-      extendBody: true,
+      extendBody: true, // 延伸Body(底部导航栏悬浮)
       drawer: null,
       endDrawer: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 300.0.rem()),
@@ -133,6 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: BottomNavigationBar(
               items: buildBarItems(context),
               currentIndex: _selectedIndex,
+              selectedLabelStyle: TextStyle(fontSize: 12.0.rem()),
+              unselectedLabelStyle: TextStyle(fontSize: 10.0.rem()),
               type: BottomNavigationBarType.fixed,
               onTap: _onItemTapped,
               backgroundColor: Colors.transparent,

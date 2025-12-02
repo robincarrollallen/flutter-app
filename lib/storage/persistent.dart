@@ -9,7 +9,7 @@ class PersistentRx<T> extends Rx<T> {
 
   /// 构造函数 [key]: 用于在 GetStorage 中存储此变量的唯一键, [initial]: 如果存储中没有值，则使用的初始值。
   PersistentRx(this._key, T initial) : super(initial) {
-    // 1. 初始化：从存储中读取值
+    // 初始化：从存储中读取值
     final storedValue = _storage.read<T>(_key);
     if (storedValue != null) {
       value = storedValue; // 如果存在，则更新当前值
@@ -17,7 +17,7 @@ class PersistentRx<T> extends Rx<T> {
       value = initial; // 否则使用初始值
     }
 
-    // 2. 自动保存：监听值的变化，并自动写入存储
+    // 自动保存：监听值的变化，并自动写入存储
     ever(this, (newValue) {
       _storage.write(_key, newValue);
     });
