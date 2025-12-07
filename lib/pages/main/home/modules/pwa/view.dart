@@ -18,30 +18,30 @@ class PwaView extends StatelessWidget {
         InkWell(
           onTap: () => { logic.hidePwa() },
           child: Stack(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(top: 4.0.rem(), left: 4.0.rem()),
-                  width: 34.0.rem(),
-                  height: 50.0.rem(),
-                  child: Align(
-                    alignment: AlignmentGeometry.topLeft,
-                    child: Icon(Icons.close, size: 16.0.rem()),
-                  ),
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 4.0.rem(), left: 4.0.rem()),
+                width: 34.0.rem(),
+                height: 50.0.rem(),
+                child: Align(
+                  alignment: AlignmentGeometry.topLeft,
+                  child: Icon(Icons.close, size: 16.0.rem()),
                 ),
-                Positioned(
-                    top: -22.0.rem(),
-                    left: -22.0.rem(),
-                    child: ClipOval(
-                      child: Container(
-                        color: colors?.neutralWhiteWhite10,
-                        width: 50.0.rem(),
-                        child: AspectRatio(
-                          aspectRatio: 1.0,
-                        ),
-                      ),
-                    )
+              ),
+              Positioned(
+                top: -22.0.rem(),
+                left: -22.0.rem(),
+                child: ClipOval(
+                  child: Container(
+                    color: colors?.neutralWhiteWhite10,
+                    width: 50.0.rem(),
+                    child: AspectRatio(
+                      aspectRatio: 1.0,
+                    ),
+                  ),
                 )
-              ]
+              )
+            ]
           ),
         ),
         Container(
@@ -49,17 +49,17 @@ class PwaView extends StatelessWidget {
           margin: EdgeInsets.only(right: 6.0.rem()),
           alignment: Alignment.centerLeft,
           child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: SizedBox(
-                height: 38.0.rem(),
-                child: AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Image.network(
-                    'https://upload-us.b83.xyz/1719570695193/Snipaste.png',
-                    fit: BoxFit.contain,
-                  ),
+            borderRadius: BorderRadius.circular(8.0),
+            child: SizedBox(
+              height: 38.0.rem(),
+              child: AspectRatio(
+                aspectRatio: 1.0,
+                child: Image.network(
+                  'https://upload-us.b83.xyz/1719570695193/Snipaste.png',
+                  fit: BoxFit.contain,
                 ),
-              )
+              ),
+            )
           ),
         ),
         Expanded(

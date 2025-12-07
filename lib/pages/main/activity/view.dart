@@ -16,13 +16,14 @@ class ActivityPage extends StatelessWidget {
     {
       return Scaffold(
         appBar: AppBar(
+          backgroundColor: colors?.bodyDefault,
           elevation: 0, // 取消阴影
           titleSpacing: 0, // 取消两侧内边距
           title: TabBar(
-            dividerColor: Colors.transparent,
-            controller: logic.tabController, // 取消底部边框线
+            dividerColor: Colors.transparent, // 取消底部边框线
+            controller: logic.tabController,
             tabs: logic.tabs,
-            isScrollable: true,
+            isScrollable: true, // 开启滚动<宽度内容撑开>
             labelStyle: const TextStyle(fontWeight: FontWeight.bold),
             tabAlignment: TabAlignment.start,
             indicatorColor: colors?.textSelected,

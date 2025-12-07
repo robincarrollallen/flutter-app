@@ -43,7 +43,6 @@ class SwiperView extends StatelessWidget {
                     initialPage: 0, // 初始索引
                     autoPlay: true, // 是否自动播放
                     reverse: false, // 是否反向播放
-                    height: 200.0.rem(), // 高度
                     aspectRatio: 16 / 9, // 宽高比
                     viewportFraction: 1, // 视图中每个页面占比
                     enlargeCenterPage: false, // 是否放中心页面

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 35,
+    "type": "whatsapp",
+    "link": "https://www.whatsapp.com/",
+    "icon": "https://upload.po7.xyz/1ee626f7-a633-4657-a952-6906d28ec28a.svg"
+  },
+  {
+    "id": 36,
+    "type": "telegram",
+    "link": "https://telegram.org/",
+    "icon": "https://upload.po7.xyz/2afe76e8-adb8-4d21-b521-daed5bd72596.svg"
+  },
+  {
+    "id": 37,
+    "type": "instagram",
+    "link": "https://www.instagram.com/",
+    "icon": "https://upload.po7.xyz/c92cd4e1-40d4-4649-bcf8-197cbfcce9a2.svg"
+  },
+  {
+    "id": 38,
+    "type": "facebook",
+    "link": "https://www.facebook.com/",
+    "icon": "https://upload-us.b83.xyz/1718365024796/Facebook.png"
+  },
+  {
+    "id": 39,
+    "type": "x",
+    "link": "https://www.x.com/",
+    "icon": "https://upload.po7.xyz/cfdec05d-a381-4ae4-8e0c-c26da7cbbb87.svg"
+  },
+  {
+    "id": 54,
+    "type": "tiktok",
+    "link": "https://www.tiktok.com/",
+    "icon": "https://upload-us.b83.xyz/1717072405823/TikTok.png"
+  }
+]

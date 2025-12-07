@@ -1,0 +1,192 @@
+{
+  "recordList": [
+    {
+      "time": "2025-10-09T07:13:55.000Z",
+      "activityName": "代理",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "Agency",
+      "awardCount": 4522,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"48ac01a2f8844e788b12b5c7d9378ab5\",\"awardCount\":4522}",
+      "minAwardCount": 1000,
+      "maxAwardCount": 9000
+    },
+    {
+      "time": "2025-10-09T07:13:02.000Z",
+      "activityName": "代理",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "Agency",
+      "awardCount": 2595,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"6f8e8dbbc0fd45b8b78f3f5dcc5d6584\",\"awardCount\":2595}",
+      "minAwardCount": 2000,
+      "maxAwardCount": 8000
+    },
+    {
+      "time": "2025-10-03T10:08:32.000Z",
+      "activityName": "首提返利888",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "FirstWithdrawRebate",
+      "awardCount": 1,
+      "awardType": "BALANCE",
+      "remake": "{\"firstWithdrawAmount\":1000,\"giveRatio\":10,\"popUpRemark\":\"我是首次提现返利\",\"giveAmount\":1,\"initRewardAmount\":1,\"isOpenDouble\":true,\"doubleAuditMultiple\":1,\"doubleMultiplier\":0,\"doubleAuditMd5\":\"\",\"doubleType\":\"RECHARGE\",\"doubleRechargeConfig\":[{\"rechargeAmount\":1000,\"rechargeDoubleMultiplier\":200},{\"rechargeAmount\":2000,\"rechargeDoubleMultiplier\":500},{\"rechargeAmount\":3000,\"rechargeDoubleMultiplier\":600},{\"rechargeAmount\":4000,\"rechargeDoubleMultiplier\":700},{\"rechargeAmount\":8000,\"rechargeDoubleMultiplier\":800},{\"rechargeAmount\":10000,\"rechargeDoubleMultiplier\":600}],\"doubleRechargeTemplateId\":2215,\"doubleRechargeTemplateName\":\"默认模版\",\"userIsDouble\":true,\"userIsGiveUpDouble\":true,\"needMultiple\":1,\"needFlow\":1}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-09-29T05:09:11.000Z",
+      "activityName": "代理2",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "AgencyTwo",
+      "awardCount": 2000,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"042be6b16dac4cd287e319b7c5b0bac6\",\"awardCount\":2000}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-09-29T05:09:11.000Z",
+      "activityName": "代理2",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "AgencyTwo",
+      "awardCount": 3000,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"6ddde9cd5ac8474190259eab031b7a7f\",\"awardCount\":3000}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-10-09T07:13:02.281Z",
+      "activityName": "代理",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "Agency",
+      "awardCount": 5488,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"183fe1d419fb4c009d43621b536a5659\",\"awardCount\":5488}",
+      "minAwardCount": 500,
+      "maxAwardCount": 9900
+    },
+    {
+      "time": "2025-10-09T07:13:02.278Z",
+      "activityName": "代理",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "Agency",
+      "awardCount": 7561571411,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"f013d83ce99f4a019c7ef93cef2ce169\",\"awardCount\":7561571411}",
+      "minAwardCount": 999999900,
+      "maxAwardCount": 9999999900
+    },
+    {
+      "time": "2025-10-03T11:19:55.629Z",
+      "activityName": "0001",
+      "activityNameParams": {},
+      "activityNameType": "CUSTOM",
+      "activityType": "NewbieTask",
+      "awardCount": 1,
+      "awardType": "BALANCE",
+      "remake": "{\"taskType\":\"NewbieTask\",\"taskTypeSub\":\"NewbieTask:FirstWithdrawal\",\"taskName\":\"首次提款任务\"}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-10-03T09:22:46.197Z",
+      "activityName": "0003",
+      "activityNameParams": {},
+      "activityNameType": "CUSTOM",
+      "activityType": "NewbieTask",
+      "awardCount": 1,
+      "awardType": "BALANCE",
+      "remake": "{\"taskType\":\"NewbieTask\",\"taskTypeSub\":\"NewbieTask:SetAssetsPassword\",\"taskName\":\"设置资产密码任务\"}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-08-15T11:15:41.665Z",
+      "activityName": "18累计每周新注册",
+      "activityNameParams": {},
+      "activityNameType": "CUSTOM",
+      "activityType": "NewbieTask",
+      "awardCount": 1,
+      "awardType": "BALANCE",
+      "remake": "{\"taskType\":\"NewbieTask\",\"taskTypeSub\":\"NewbieTask:BindCPF\",\"taskName\":\"绑定CPF任务\"}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-08-13T10:32:44.426Z",
+      "activityName": "代理",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "Agency",
+      "awardCount": 400,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"27daf33aa223457dbb5574396f83870b\",\"awardCount\":400}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-08-13T10:32:22.935Z",
+      "activityName": "代理",
+      "activityNameParams": "{\"key\":\"value\"}",
+      "activityNameType": "CUSTOM",
+      "activityType": "Agency",
+      "awardCount": 300,
+      "awardType": "BALANCE",
+      "remake": "{\"rewardId\":\"9fd6b0bad4d14045b0c6d79376c9009b\",\"awardCount\":300}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-08-08T07:11:58.423Z",
+      "activityName": "5444",
+      "activityNameParams": {},
+      "activityNameType": "CUSTOM",
+      "activityType": "VIP",
+      "awardCount": 100,
+      "awardType": "BALANCE",
+      "remake": "{\"arg\":{\"userId\":325945541,\"tenantId\":1480478,\"type\":\"PROMOTION\"},\"vipLevelInfo\":{\"id\":790,\"vipId\":251,\"level\":1,\"promotionBet\":100,\"promotionRecharge\":100,\"promotionReward\":100,\"dailyBet\":100,\"dailyReward\":100,\"weeklyBet\":100,\"weeklyReward\":100,\"monthlyBet\":100,\"monthlyReward\":100,\"retentionBet\":100,\"retentionRecharge\":100,\"createTime\":\"2025-04-04T12:28:30.888Z\",\"updateTime\":\"2025-04-04T12:28:30.888Z\",\"lastOperator\":\"bb111\"}}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-06-14T14:05:41.606Z",
+      "activityName": "充值首充",
+      "activityNameParams": {},
+      "activityNameType": "DEFAULT",
+      "activityType": "NewbieTask",
+      "awardCount": 1,
+      "awardType": "BALANCE",
+      "remake": "{\"taskType\":\"NewbieTask\",\"taskTypeSub\":\"NewbieTask:FirstRecharge\",\"taskName\":\"首次充值任务\"}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    },
+    {
+      "time": "2025-06-14T12:05:22.606Z",
+      "activityName": "Bob自定义",
+      "activityNameParams": {},
+      "activityNameType": "CUSTOM",
+      "activityType": "NewbieTask",
+      "awardCount": 1,
+      "awardType": "BALANCE",
+      "remake": "{\"taskType\":\"NewbieTask\",\"taskTypeSub\":\"NewbieTask:BindPhone\",\"taskName\":\"绑定手机任务\"}",
+      "minAwardCount": 0,
+      "maxAwardCount": 0
+    }
+  ],
+  "total": 5,
+  "all": {
+    "allAmount": 5001
+  },
+  "randomAmount": {
+    "allMinAmount": 3000,
+    "allMaxAmount": 17000
+  }
+}

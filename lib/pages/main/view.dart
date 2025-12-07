@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import './home/modules/drawer/view.dart';
 import '/theme/variables/custom.dart';
 import '/utils/screen.dart';
 import '/common/logic.dart';
@@ -81,27 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
       key: _scaffoldKey,
       extendBody: true, // 延伸Body(底部导航栏悬浮)
       drawer: null,
-      endDrawer: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 300.0.rem()),
-        child: Scaffold(
-          appBar: AppBar(
-            foregroundColor:Colors.transparent,
-            elevation: 0.0
-          ),
-          body: ListView(
-            addAutomaticKeepAlives: false,
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              ListTile(
-                title: const Text('返回'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-        )
-      ),
+      endDrawer: DrawerView(),
       body: IndexedStack(
         index: _selectedIndex,
         children: tabViewList

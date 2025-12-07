@@ -31,6 +31,7 @@ class EventsListView extends StatelessWidget {
             children: [
               ShinyButton(
                 padding: EdgeInsets.zero,
+                borderRadius: BorderRadius.zero,
                 child: Container(
                   height: 120.0.rem(),
                   decoration: BoxDecoration(
@@ -62,11 +63,12 @@ class EventsListView extends StatelessWidget {
                     )
                   ),
                   TextButton(
+                    style: ButtonStyle(padding: WidgetStateProperty.all(EdgeInsets.zero)),
                     onPressed: () {
                       print('>>>>>>>>>>>>> ${state.activityList[index].name}');
                     },
                     child: Container(
-                      margin: EdgeInsets.only(top: 2.0.rem(), bottom: 10.0.rem()),
+                      margin: EdgeInsets.only(top: 6.0.rem(), bottom: 10.0.rem()),
                       padding: EdgeInsets.symmetric(horizontal: 16.0.rem(), vertical: 8.0.rem()),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -78,7 +80,7 @@ class EventsListView extends StatelessWidget {
                           end: Alignment.centerRight,
                           stops: const [-0.27, 1.27],
                         ),
-                          borderRadius: BorderRadius.circular(4.0.rem())
+                        borderRadius: BorderRadius.circular(4.0.rem())
                       ),
                       child: Text('In Progress', style: TextStyle(fontSize: 14.0.rem(), color: colors?.textDefault, fontWeight: FontWeight.w600)),
                     )

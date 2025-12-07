@@ -17,7 +17,7 @@ class ActivityLogic extends GetxController with GetSingleTickerProviderStateMixi
 
   final List<Widget> tabViews = [
     EventsListView(),
-    const RewardListView(),
+    RewardListView(),
   ];
 
   /// 生命周期: 初始化

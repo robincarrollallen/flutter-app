@@ -71,6 +71,7 @@ flutter:
     - assets/svg/tabBar/
     - assets/icons/home/
     - assets/icons/tabBar/tab/
+    - assets/images/
     - assets/images/home/
     - assets/sprite/
     - assets/mock/
