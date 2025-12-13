@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import '/model/tenant_info_model.dart';
-
+import '/store/layout/state.dart';
 import 'state.dart';
 
 class CommonLogic extends GetxController {
-  final CommonState state = CommonState(); // 全局数据状态
+  final state = CommonState(); // 全局数据状态
+  final layoutState = LayoutState();
 
   @override
   void onReady() {

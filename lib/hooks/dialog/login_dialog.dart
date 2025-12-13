@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import '/pages/login/view.dart';
 
-void showLoginSheet(BuildContext context) {
-  late TabController tabController;
-
+void showLoginSheet(BuildContext context, {type = 'login'}) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,

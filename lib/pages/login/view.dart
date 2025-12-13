@@ -1,14 +1,21 @@
 import 'dart:ui';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import '/components/shiny_button.dart';
 import '/theme/variables/custom.dart';
+import '/store/layout/logic.dart';
+import '/components/input.dart';
 import '/utils/screen.dart';
+import '/enums/input.dart';
 import 'logic.dart';
 
 class LoginPage extends StatelessWidget {
+
   LoginPage({super.key});
-  
+
   final logic = Get.put(LoginLogic());
+  final statue = Get.find<LoginLogic>().state;
+  final layoutState = Get.find<LayoutLogic>().state;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +23,10 @@ class LoginPage extends StatelessWidget {
 
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth: 486.0
+        maxWidth: 486.0
       ),
-      child: SizedBox(
-        width: double.infinity, // 尽可能宽，受 maxWidth 限制
+      child: Padding(
+        padding: EdgeInsets.only(top: layoutState.padding.value.top),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
           child: Scaffold(
@@ -53,9 +60,9 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () => Navigator.pop(context),
                     icon: Icon(Icons.close, size: 16.0.rem(), color: colors?.iconDefault)
-                  ),
-                ],
-              ),
+                  )
+                ]
+              )
             ),
             body: Container(
               margin: EdgeInsets.only(top: 50.0.rem()),
@@ -70,12 +77,11 @@ class LoginPage extends StatelessWidget {
                   topRight: Radius.circular(20.0.rem())
                 )
               ),
-              child: ListView(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12.0.rem(), vertical: 44.0.rem()),
+              child: Obx(() => ListView(
+                padding: EdgeInsets.symmetric(horizontal: 12.0.rem(), vertical: 44.0.rem()),
                 children: [
                   Text(
-                    'Log in to your account',
+                    statue.visibleType.value == 'login' ? 'Log in to your account' : 'Create a game account',
                     style: TextStyle(
                       fontSize: 24.0.rem(),
                       fontWeight: FontWeight.bold,
@@ -83,20 +89,22 @@ class LoginPage extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text("Don't have an account ?",
+                      Text(
+                        statue.visibleType.value == 'login' ? "Don't have an account ?" : "Already have an account ?",
                         style: TextStyle(color: colors?.textWeaker)),
                       TextButton(
-                        onPressed: () {},
-                        child: Text('Register', style: TextStyle(
-                          color: colors?.textHighlight)
+                        onPressed: () {statue.setVisibleType(statue.visibleType.value == 'login' ? 'register' : 'login');},
+                        child: Text(
+                          statue.visibleType.value == 'login' ? 'Register' : 'Login',
+                          style: TextStyle(color: colors?.textHighlight)
                         )
-                      ),
+                      )
                     ],
                   ),
                   Center(
                     child: IntrinsicWidth(
                       child: Container(
-                        margin: EdgeInsets.only(top: 44.rem()),
+                        margin: EdgeInsets.only(top: 44.rem(), bottom: 24.rem()),
                         padding: EdgeInsetsGeometry.all(2.rem()),
                         decoration: BoxDecoration(
                           color: colors?.surfaceLowered,
@@ -128,30 +136,50 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 12.0.rem()),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.rem()),
-                      gradient: LinearGradient(
-                        colors: [
-                          colors?.gradientsPrimaryA ?? Colors.blue,
-                          colors?.gradientsPrimaryB ?? Colors.lightBlue,
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        stops: const [-0.27, 1.27],
-                      ),
-                    ),
-                    child: Center(
-                      child: InkWell(
-                        onTap: () {},
-                        child: Text('Login', style: TextStyle(fontSize: 14.0.rem(), color: colors?.textDefault))
-                      ),
+                  Form(
+                    key: logic.formKey,
+                    onChanged: logic.validateForm,  // 表单内任意字段变化时触发
+                    child: Column(
+                      children: [
+                        Input(
+                          validate: true,
+                          type: InputType.account,
+                        ),
+                        Input(
+                          validate: true,
+                          type: InputType.password,
+                        )
+                      ]
                     )
                   ),
+                  ShinyButton(
+                    disabled: !statue.isValid.value,
+                    onPressed: () { print('>>>>>>>>>>>> login'); },
+                    child: Ink(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 12.0.rem()),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.rem()),
+                        gradient: LinearGradient(
+                          colors: [
+                            colors?.gradientsPrimaryA ?? Colors.blue,
+                            colors?.gradientsPrimaryB ?? Colors.lightBlue,
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          stops: const [-0.27, 1.27],
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          statue.visibleType.value == 'login' ? 'Login' : 'Register',
+                          style: TextStyle(fontSize: 14.0.rem(), color: colors?.textDefault),
+                        ),
+                      ),
+                    ),
+                  )
                 ]
-              ),
+              ))
             )
           ),
         ),

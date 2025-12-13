@@ -2,34 +2,30 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class ShinyButton extends StatefulWidget {
-  /// 按钮上显示的子组件，通常是 Text。
-  final Widget child;
+  final Widget child; // 按钮上显示的子组件，通常是 Text。
 
-  final bool shiny;
+  final bool shiny; // 是否开启扫光
 
-  /// 按钮的背景颜色。
-  final Color color;
+  final bool disabled; // 是否禁用
 
-  /// 扫光效果的颜色。
-  final Color shineColor;
+  final Color color; // 按钮的背景颜色。
 
-  /// 按钮的点击回调。
-  final VoidCallback? onPressed;
+  final Color shineColor; // 扫光效果的颜色。
 
-  /// 扫光动画的周期，默认为3秒。
-  final Duration duration;
+  final VoidCallback? onPressed; // 按钮的点击回调。
 
-  /// 按钮的圆角。
-  final BorderRadius borderRadius;
+  final Duration duration; // 扫光动画的周期，默认为3秒
 
-  /// 按钮的内边距。
-  final EdgeInsetsGeometry padding;
+  final BorderRadius borderRadius; // 按钮的圆角。
+
+  final EdgeInsetsGeometry padding; // 按钮的内边距。
 
   const ShinyButton({
     super.key,
     required this.child,
     this.onPressed,
     this.shiny = false,
+    this.disabled = false,
     this.color = Colors.transparent, // 默认蓝色背景
     this.shineColor = Colors.white,
     this.duration = const Duration(seconds: 3), // 缩短周期以获得更快的扫光效果
@@ -72,63 +68,63 @@ class _ShinyButtonState extends State<ShinyButton> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: widget.color,
+    return ClipRRect(
       borderRadius: widget.borderRadius,
-      child: InkWell(
-        onTap: widget.onPressed,
-        borderRadius: widget.borderRadius,
-        child: ClipRRect(
-          borderRadius: widget.borderRadius,
-          child: Stack(
-            alignment: Alignment.topLeft,
-            children: [
-              // 按钮内容
-              Padding(
-                padding: widget.padding,
-                child: Center(
-                  child: DefaultTextStyle(
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                    child: widget.child,
+      child: Stack(
+        alignment: Alignment.topLeft,
+        children: [
+          // 按钮内容
+          Center(
+            child: Opacity(
+              opacity: widget.disabled ? 0.5 : 1.0,
+              child: DefaultTextStyle(
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  borderRadius: widget.borderRadius,
+                  child: InkWell(
+                    onTap: widget.disabled ? null : widget.onPressed,
+                    borderRadius: widget.borderRadius,  // 水波纹圆角
+                    child: widget.child
                   ),
                 ),
               ),
-              widget.shiny ? Positioned.fill(
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    final buttonSize = constraints.biggest;
-                    return AnimatedBuilder(
-                      animation: _controller,
-                      builder: (context, child) {
-                        return Transform.translate(
-                          offset:Offset(-buttonSize.width, 0),
-                          child: Opacity(
-                            opacity: _fadeAnimation.value,
-                            child: Transform.scale(
-                              scale: _scaleAnimation.value,
-                              child: Transform.rotate(
-                                angle: -45 * math.pi / 180,
-                                child: Container(
-                                  width: buttonSize.width,
-                                  height: buttonSize.width, // 创建一个正方形
-                                  color: widget.shineColor,
-                                ),
-                              ),
+            ),
+          ),
+          !widget.disabled && widget.shiny ? Positioned.fill(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final buttonSize = constraints.biggest;
+                return AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, child) {
+                    return Transform.translate(
+                      offset:Offset(-buttonSize.width, 0),
+                      child: Opacity(
+                        opacity: _fadeAnimation.value,
+                        child: Transform.scale(
+                          scale: _scaleAnimation.value,
+                          child: Transform.rotate(
+                            angle: -45 * math.pi / 180,
+                            child: Container(
+                              width: buttonSize.width,
+                              height: buttonSize.width, // 创建一个正方形
+                              color: widget.shineColor,
                             ),
                           ),
-                        );
-                      },
+                        ),
+                      ),
                     );
-                  }
-                )
-              ) : const SizedBox(),
-            ],
-          ),
-        ),
+                  },
+                );
+              }
+            )
+          ) : const SizedBox(),
+        ],
       ),
     );
   }

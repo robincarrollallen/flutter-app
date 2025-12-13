@@ -8,6 +8,7 @@ import 'common/logic.dart';
 import 'router/routes.dart';
 import 'i18n/translation.dart';
 import 'pages/launch/view.dart';
+import '/store/layout/logic.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized(); // 确保 Widgets binding 已初始化(有些插件 在 Widgets binding 初始化后才能被调用)
@@ -19,10 +20,12 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   final logic = Get.put(CommonLogic(), permanent: true); // permanent 常驻内存，直到应用关闭
+  final layoutLogic = Get.put(LayoutLogic(), permanent: true);
   final state = Get.find<CommonLogic>().state;
 
   @override
   Widget build(BuildContext context) {
+
     return ScreenUtilInit(
       designSize: Size(
         SCREEN.MOBILE_DESIGN_WIDTH.size,      // 规定窗口使用的宽度基础值
