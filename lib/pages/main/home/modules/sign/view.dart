@@ -78,7 +78,7 @@ class SignView extends StatelessWidget {
                       ),
                     ),
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () { showLoginSheet(context, 'register');},
                       style: OutlinedButton.styleFrom(
                         padding: EdgeInsets.zero, // 移除内边距
                         minimumSize: Size.zero, // 移除最小尺寸约束

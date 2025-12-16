@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '/components/shiny_button.dart';
 import '/theme/variables/custom.dart';
 import '/store/layout/logic.dart';
+import '/store/status/logic.dart';
 import '/components/input.dart';
 import '/utils/screen.dart';
 import '/enums/input.dart';
@@ -14,7 +15,8 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   final logic = Get.put(LoginLogic());
-  final statue = Get.find<LoginLogic>().state;
+  final state = Get.find<LoginLogic>().state;
+  final statusSate = Get.find<StatusLogic>().state;
   final layoutState = Get.find<LayoutLogic>().state;
 
   @override
@@ -81,7 +83,7 @@ class LoginPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.0.rem(), vertical: 44.0.rem()),
                 children: [
                   Text(
-                    statue.visibleType.value == 'login' ? 'Log in to your account' : 'Create a game account',
+                    statusSate.loginVisibleType.value == 'login' ? 'Log in to your account' : 'Create a game account',
                     style: TextStyle(
                       fontSize: 24.0.rem(),
                       fontWeight: FontWeight.bold,
@@ -90,12 +92,12 @@ class LoginPage extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        statue.visibleType.value == 'login' ? "Don't have an account ?" : "Already have an account ?",
+                        statusSate.loginVisibleType.value == 'login' ? "Don't have an account ?" : "Already have an account ?",
                         style: TextStyle(color: colors?.textWeaker)),
                       TextButton(
-                        onPressed: () {statue.setVisibleType(statue.visibleType.value == 'login' ? 'register' : 'login');},
+                        onPressed: () {statusSate.setLoginVisibleType(statusSate.loginVisibleType.value == 'login' ? 'register' : 'login');},
                         child: Text(
-                          statue.visibleType.value == 'login' ? 'Register' : 'Login',
+                          statusSate.loginVisibleType.value == 'login' ? 'Register' : 'Login',
                           style: TextStyle(color: colors?.textHighlight)
                         )
                       )
@@ -153,7 +155,7 @@ class LoginPage extends StatelessWidget {
                     )
                   ),
                   ShinyButton(
-                    disabled: !statue.isValid.value,
+                    disabled: !state.isValid.value,
                     onPressed: () { print('>>>>>>>>>>>> login'); },
                     child: Ink(
                       width: double.infinity,
@@ -172,7 +174,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          statue.visibleType.value == 'login' ? 'Login' : 'Register',
+                          statusSate.loginVisibleType.value == 'login' ? 'Login' : 'Register',
                           style: TextStyle(fontSize: 14.0.rem(), color: colors?.textDefault),
                         ),
                       ),

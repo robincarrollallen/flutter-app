@@ -1,3 +1,4 @@
+import 'package:flutter_app/store/status/logic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
 
   final logic = Get.put(CommonLogic(), permanent: true); // permanent 常驻内存，直到应用关闭
   final layoutLogic = Get.put(LayoutLogic(), permanent: true);
+  final statusLogic = Get.put(StatusLogic(), permanent: true);
   final state = Get.find<CommonLogic>().state;
 
   @override

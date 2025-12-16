@@ -8,9 +8,5 @@ class StatusLogic extends GetxController {
   @override
   void onReady() {
     super.onReady();
-
-    final context = Get.context;
-
-    state.setPadding(MediaQuery.of(context!).padding);
   }
 }
