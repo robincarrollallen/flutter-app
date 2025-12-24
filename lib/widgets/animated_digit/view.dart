@@ -71,8 +71,7 @@ class GetXFrameCountUpDemo extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.updateValue(controller.currentValue.value + 1234.56,
-            durationInSeconds: 1.0);
+          controller.updateValue(controller.currentValue.value + 1234.56, durationInSeconds: 1.0);
         },
         child: const Icon(Icons.add),
       ),

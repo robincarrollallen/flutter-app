@@ -146,10 +146,15 @@ class LoginPage extends StatelessWidget {
                         Input(
                           validate: true,
                           type: InputType.account,
+                          onChanged: logic.accountChange,
+                          clear: true,
+                          prefixIcon: Icon(Icons.person, color: colors?.textWeaker),
                         ),
                         Input(
                           validate: true,
                           type: InputType.password,
+                          onChanged: logic.passwordChange,
+                          prefixIcon: Icon(Icons.key, color: colors?.textWeaker),
                         )
                       ]
                     )

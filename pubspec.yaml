@@ -68,11 +68,16 @@ flutter:
   # 静态文件
   assets:
     - assets/svg/
+    - assets/svg/vip/
+    - assets/svg/flag/
     - assets/svg/tabBar/
+    - assets/svg/profile/
+    - assets/icons/vip/
     - assets/icons/home/
     - assets/icons/tabBar/tab/
     - assets/images/
     - assets/images/home/
+    - assets/images/profile/
     - assets/sprite/
     - assets/mock/
 

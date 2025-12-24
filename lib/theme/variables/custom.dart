@@ -13,6 +13,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
   final Color? textSuccess;
   final Color? textWarning;
   final Color? textHighlight;
+  final Color? textHighlightWhite;
   final Color? footbar;
   final Color? surfaceRaisedL1;
   final Color? surfaceRaisedL2;
@@ -35,6 +36,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
   final Color? neutralWhiteWhite20;
   final Color? glowPrimaryOpacity40;
   final Color? glowPrimaryOpacity100;
+  final Color? glowSecondaryOpacity40;
 
   const CustomColors({
     this.bodyDefault,
@@ -48,6 +50,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
     this.textSuccess,
     this.textWarning,
     this.textHighlight,
+    this.textHighlightWhite,
     this.footbar,
     this.surfaceRaisedL1,
     this.surfaceRaisedL2,
@@ -70,6 +73,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
     this.neutralWhiteWhite20,
     this.glowPrimaryOpacity40,
     this.glowPrimaryOpacity100,
+    this.glowSecondaryOpacity40
   });
 
   @override
@@ -85,6 +89,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
     Color? textSuccess,
     Color? textWarning,
     Color? textHighlight,
+    Color? textHighlightWhite,
     Color? footbar,
     Color? surfaceRaisedL1,
     Color? surfaceRaisedL2,
@@ -107,6 +112,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
     Color? neutralWhiteWhite20,
     Color? glowPrimaryOpacity40,
     Color? glowPrimaryOpacity100,
+    Color? glowSecondaryOpacity40,
   }) {
     return CustomColors(
       bodyDefault: bodyDefault ?? this.bodyDefault,
@@ -120,6 +126,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
       textSuccess: textSuccess ?? this.textSuccess,
       textWarning: textWarning ?? this.textWarning,
       textHighlight: textHighlight ?? this.textHighlight,
+      textHighlightWhite: textHighlightWhite ?? this.textHighlightWhite,
       footbar: footbar ?? this.footbar,
       surfaceRaisedL1: surfaceRaisedL1 ?? this.surfaceRaisedL1,
       surfaceRaisedL2: surfaceRaisedL2 ?? this.surfaceRaisedL2,
@@ -142,6 +149,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
       neutralWhiteWhite20: neutralWhiteWhite20 ?? this.neutralWhiteWhite20,
       glowPrimaryOpacity40: glowPrimaryOpacity40 ?? this.glowPrimaryOpacity40,
       glowPrimaryOpacity100: glowPrimaryOpacity100 ?? this.glowPrimaryOpacity100,
+      glowSecondaryOpacity40: glowSecondaryOpacity40 ?? this.glowSecondaryOpacity40,
     );
   }
 
@@ -159,6 +167,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
       textSuccess: Color.lerp(textSuccess, other.textSuccess, t),
       textWarning: Color.lerp(textWarning, other.textWarning, t),
       textHighlight: Color.lerp(textHighlight, other.textHighlight, t),
+      textHighlightWhite: Color.lerp(textHighlightWhite, other.textHighlightWhite, t),
       footbar: Color.lerp(footbar, other.footbar, t),
       surfaceRaisedL1: Color.lerp(surfaceRaisedL1, other.surfaceRaisedL1, t),
       surfaceRaisedL2: Color.lerp(surfaceRaisedL2, other.surfaceRaisedL2, t),
@@ -181,6 +190,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
       neutralWhiteWhite20: Color.lerp(neutralWhiteWhite20, other.neutralWhiteWhite20, t),
       glowPrimaryOpacity40: Color.lerp(glowPrimaryOpacity40, other.glowPrimaryOpacity40, t),
       glowPrimaryOpacity100: Color.lerp(glowPrimaryOpacity100, other.glowPrimaryOpacity100, t),
+      glowSecondaryOpacity40: Color.lerp(glowSecondaryOpacity40, other.glowSecondaryOpacity40, t),
     );
   }
 }

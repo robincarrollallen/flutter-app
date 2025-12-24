@@ -19,4 +19,14 @@ class LoginLogic extends GetxController with GetSingleTickerProviderStateMixin {
   void validateForm() {
     state.setIsValid(formKey.currentState?.validate()); // 设置表单验证状态
   }
+
+  /// 账号输入监听回调
+  void accountChange(String value) {
+    print('>>>>>>>>>>>>> $value');
+  }
+
+  /// 密码输入监听回调
+  void passwordChange(String value) {
+    print('>>>>>>>>>>>>> $value');
+  }
 }

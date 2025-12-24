@@ -1,16 +1,18 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '/theme/variables/custom.dart';
+import '/store/tenant/logic.dart';
+import '/store/app/logic.dart';
 import '/i18n/constants.dart';
-import '/common/logic.dart';
 import '/utils/screen.dart';
 import '/i18n/type.dart';
 
 Future<void> showLanguageDialog(BuildContext context) async {
-  final state = Get.find<CommonLogic>().state;
+  final tenantState = Get.find<TenantLogic>().state;
   final colors = Theme.of(context).extension<CustomColors>(); // 主题颜色<扩展>
+  final appState = Get.find<AppLogic>().state;
 
-  final langList = state.tenantInfo.value.appLanguage?.map((item) {
+  final langList = tenantState.tenantInfo.value.appLanguage?.map((item) {
     final lang = item.split('-');
 
     return {
@@ -57,7 +59,7 @@ Future<void> showLanguageDialog(BuildContext context) async {
                   '${item["languageName"]} ${item["countryName"]}',
                   style: TextStyle(color: colors?.textDefault),
                 ),
-                if (item["languageCode"] == state.locale.value.languageCode)
+                if (item["languageCode"] == appState.locale.value.languageCode)
                   Container(
                     decoration: BoxDecoration(
                       color: colors?.textDefault,
@@ -80,6 +82,6 @@ Future<void> showLanguageDialog(BuildContext context) async {
   // 在这里处理用户的选择结果
   if (result != null) {
     final lang = result.split('-');
-    state.setLocale(Locale(lang[0], lang[1]));
+    appState.setLocale(Locale(lang[0], lang[1]));
   }
 }

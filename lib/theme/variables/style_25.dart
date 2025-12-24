@@ -35,6 +35,7 @@ final ThemeData style25 = ThemeData.dark().copyWith(
       textSuccess: Colors.green,
       textWarning: Color.fromRGBO(252, 151, 76, 1),
       textHighlight: Color.fromRGBO(245, 200, 76, 1),
+      textHighlightWhite: Color.fromRGBO(255, 255, 255, 1),
       footbar: Color.fromRGBO(10, 13, 10, 1),
       surfaceRaisedL1: Color.fromRGBO(18, 23, 19, 1),
       surfaceRaisedL2: Color.fromRGBO(23, 33, 23, 1),
@@ -57,6 +58,7 @@ final ThemeData style25 = ThemeData.dark().copyWith(
       neutralWhiteWhite20: Color.fromRGBO(255, 255, 255, .2),
       glowPrimaryOpacity40: Color.fromRGBO(25, 204, 16, .4),
       glowPrimaryOpacity100: Color.fromRGBO(25, 204, 16, 1),
+      glowSecondaryOpacity40: Color.fromRGBO(255, 171, 0, .4),
     ),
   ],
 );

@@ -4,8 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import './home/modules/drawer/view.dart';
 import '/theme/variables/custom.dart';
 import '/utils/screen.dart';
-import '/common/logic.dart';
-import '/i18n/type.dart';
 import 'home/view.dart';
 import 'tabBar/view.dart';
 import 'profile/view.dart';
@@ -30,8 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
   late final List<Widget> tabViewList; // 定义 tab 列表, 需要在 initState 更新 tabViewList<传入_scaffoldKey>
 
   int _selectedIndex = 0; /// 选中的底部导航栏下标
-  final logic = Get.find<CommonLogic>();
-  final state = Get.find<CommonLogic>().state;
 
   void _onItemTapped(int index) { /// 点击导航栏触发的方法
     if (index == 2) {
@@ -129,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 120.0.rem(),
           height: 120.0.rem(),
           child: GestureDetector(
-            onTap: () { Get.updateLocale(LOCALE.enUS.locale); },
+            onTap: () { },
             behavior: HitTestBehavior.opaque,
             child: Container(
               decoration: BoxDecoration(

@@ -33,6 +33,7 @@ class ActivityPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(), // 禁止手势滑动
           controller: logic.tabController,
           children: logic.tabViews
         ),

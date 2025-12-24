@@ -21,7 +21,7 @@ class DrawerActivityView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsGeometry.symmetric(vertical: 16.0.rem()),
+              padding: EdgeInsets.symmetric(vertical: 16.0.rem()),
               child: Text('Top Picks'),
             ),
             GridView.count(
@@ -44,7 +44,7 @@ class DrawerActivityView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsetsGeometry.all(4.0.rem()),
+                        padding: EdgeInsets.all(4.0.rem()),
                         child: Row(
                           spacing: 4.0.rem(),
                           children: [
@@ -52,6 +52,7 @@ class DrawerActivityView extends StatelessWidget {
                               '$iconUrl',
                               width: 24.0.rem(),
                               height: 24.0.rem(),
+                              fit: BoxFit.cover,
                             ),
                             Expanded(
                               child:Text(
