@@ -86,6 +86,9 @@ class NavBarView extends StatelessWidget {
                     minimumSize: Size.zero, // 取消默认的最小尺寸
                     padding: EdgeInsets.all(6.0.rem()),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap, // 让点击区域收缩到内容大小
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4.0.rem()),
+                    ),
                   ),
                   icon: SvgPicture.asset(
                     'assets/svg/earth.svg',
@@ -111,6 +114,9 @@ class NavBarView extends StatelessWidget {
                 style: IconButton.styleFrom(
                   minimumSize: Size.zero,  // 取消默认的最小尺寸
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap, // 让点击区域收缩到内容大小
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0.rem()),
+                  ),
                 ),
                 icon: SvgPicture.asset(
                   'assets/svg/menu.svg',

@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 
 class RippleButton extends StatelessWidget {
   final Widget? child;
-  final String? text;
-  final TextStyle? textStyle;
   final VoidCallback? onPressed;
-  final VoidCallback? onLongPress;
-  final double? width;
+  final VoidCallback onLongPress;
+  final double width;
   final double height;
-  final Color? backgroundColor;
+  final Color backgroundColor;
   final Gradient? gradient;
-  final Color? rippleColor;
+  final Color rippleColor;
   final double borderRadius;
   final BoxBorder? border;
   final List<BoxShadow>? boxShadow;
@@ -21,16 +19,14 @@ class RippleButton extends StatelessWidget {
   const RippleButton({
     super.key,
     this.child,
-    this.text,
-    this.textStyle,
     this.onPressed,
-    this.onLongPress,
-    this.width,
+    this.onLongPress = _defaultLongPress,
+    this.width = double.infinity,
     this.height = 48,
-    this.backgroundColor,
+    this.backgroundColor = Colors.transparent,
     this.gradient,
-    this.rippleColor,
-    this.borderRadius = 8,
+    this.rippleColor = Colors.white10,
+    this.borderRadius = 6,
     this.border,
     this.boxShadow,
     this.padding,
@@ -38,34 +34,32 @@ class RippleButton extends StatelessWidget {
     this.disabledOpacity = 0.5,
   });
 
+  static void _defaultLongPress() {}
+
   @override
   Widget build(BuildContext context) {
     final radius = BorderRadius.circular(borderRadius);
-    final effectiveRippleColor = rippleColor ?? Colors.white.withValues(alpha: 0.3);
-    final bgColor = backgroundColor ?? Colors.blue;
 
     Widget button = Material(
-      color: gradient == null ? bgColor : Colors.transparent,
+      type: MaterialType.button,
+      color: backgroundColor,
       borderRadius: radius,
-      type: gradient != null ? MaterialType.transparency : MaterialType.button,
       child: InkWell(
+        splashColor: rippleColor,
         onTap: disabled ? null : onPressed,
-        onLongPress: disabled ? null : onLongPress,
-        borderRadius: radius,
-        splashColor: effectiveRippleColor,
-        highlightColor: effectiveRippleColor.withValues(alpha: 0.15),
-        splashFactory: InkRipple.splashFactory, // 确保使用波纹效果
-        child: Container(
-          width: width ?? double.infinity,
+        onLongPress: disabled ? _defaultLongPress : onLongPress,
+        borderRadius: BorderRadius.circular(8.0),
+        child: Ink(
           height: height,
-          padding: padding ?? EdgeInsets.symmetric(horizontal: 16),
+          width: width,
           decoration: BoxDecoration(
             gradient: gradient,
             borderRadius: radius,
-            border: border,
+            border: border
           ),
-          alignment: Alignment.center,
-          child: child ?? _buildDefaultChild(),
+          child: Center(
+            child: child,
+          )
         ),
       ),
     );
@@ -90,18 +84,5 @@ class RippleButton extends StatelessWidget {
     }
 
     return button;
-  }
-
-  Widget? _buildDefaultChild() {
-    if (text == null) return null;
-    return Text(
-      text!,
-      style: textStyle ??
-          TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
-    );
   }
 }

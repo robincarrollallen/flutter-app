@@ -1,7 +1,6 @@
-import 'package:flutter_app/components/passwordInput.dart';
-import 'package:flutter_app/components/ripple_button.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import '/components/passwordInput.dart';
+import '/components/ripple_button.dart';
 import '/theme/variables/custom.dart';
 import '/utils/screen.dart';
 
@@ -44,7 +43,15 @@ class PayPasswordPage extends StatelessWidget {
               child: Text('The first withdrawal, you need to set the withdrawal password first', style: TextStyle(fontSize: 10.0.rem(), color: colors?.textWarning))
             ),
             RippleButton(
-              child: Text('Withdraw Now', style: TextStyle(fontSize: 14.0.rem(), fontWeight: FontWeight.bold, color: colors?.textDefault)),
+              gradient: LinearGradient(
+                colors: [
+                  colors?.gradientsPrimaryA ?? Colors.blue,
+                  colors?.gradientsPrimaryB ?? Colors.lightBlue,
+                ],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+              child: Text('Withdraw Now', style: TextStyle(fontSize: 14.0.rem(), fontWeight: FontWeight.bold, color: colors?.textDefault))
             )
           ],
         ),

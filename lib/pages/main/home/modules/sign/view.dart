@@ -1,10 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/hooks/dialog/language_dialog.dart';
-import 'package:flutter_app/hooks/dialog/login_dialog.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../theme/variables/custom.dart';
-import '../../../../../utils/screen.dart';
+import '/hooks/dialog/login_dialog.dart';
+import '/theme/variables/custom.dart';
+import '/utils/screen.dart';
 
 class SignView extends StatelessWidget {
   const SignView({super.key});
@@ -78,7 +77,7 @@ class SignView extends StatelessWidget {
                       ),
                     ),
                     OutlinedButton(
-                      onPressed: () { showLoginSheet(context, 'register');},
+                      onPressed: () { showLoginSheet(context, 'register'); },
                       style: OutlinedButton.styleFrom(
                         padding: EdgeInsets.zero, // 移除内边距
                         minimumSize: Size.zero, // 移除最小尺寸约束
