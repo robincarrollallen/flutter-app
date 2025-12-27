@@ -164,7 +164,7 @@ class UserInfo extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                height: 40,
+                height: 40.0.rem(),
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   color: colors?.surfaceRaisedL2,

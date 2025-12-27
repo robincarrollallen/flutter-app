@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +13,9 @@ import '/store/layout/logic.dart';
 import '/store/status/logic.dart';
 import '/store/tenant/logic.dart';
 
+
 Future<void> main() async {
+  usePathUrlStrategy(); // 去掉 URL 中的 #
   WidgetsFlutterBinding.ensureInitialized(); // 确保 Widgets binding 已初始化(有些插件 在 Widgets binding 初始化后才能被调用)
   await GetStorage.init();
   runApp(MyApp());

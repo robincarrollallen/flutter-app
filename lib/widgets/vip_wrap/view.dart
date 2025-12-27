@@ -21,7 +21,7 @@ class VipWrap extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Positioned(
+          Positioned.fill(
             child: VipBackground(
               startColor: Color(0xFF2A2A2A),
               endColor: Color(0xFF3B3B3B),
