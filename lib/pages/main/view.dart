@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '/hooks/dialog/login_dialog.dart';
 import './home/modules/drawer/view.dart';
 import '/theme/variables/custom.dart';
+import '/store/app/logic.dart';
+import '/store/app/state.dart';
 import '/utils/screen.dart';
 import 'home/view.dart';
 import 'tabBar/view.dart';
@@ -24,15 +27,21 @@ class MyHomePage extends StatefulWidget {
 /// 首页构建
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final AppState appState = Get.find<AppLogic>().state;
 
   late final List<Widget> tabViewList; // 定义 tab 列表, 需要在 initState 更新 tabViewList<传入_scaffoldKey>
 
   int _selectedIndex = 0; /// 选中的底部导航栏下标
 
-  void _onItemTapped(int index) { /// 点击导航栏触发的方法
+  void _onItemTapped(int index, [BuildContext? context]) { /// 点击导航栏触发的方法
+    if (index > 1 && appState.token.value.isEmpty) {
+      return showLoginSheet(context!);
+    }
+
     if (index == 2) {
       return;
     }
+
     setState(() {
       _selectedIndex = index;
     });
@@ -112,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               selectedLabelStyle: TextStyle(fontSize: 12.0.rem()),
               unselectedLabelStyle: TextStyle(fontSize: 10.0.rem()),
               type: BottomNavigationBarType.fixed,
-              onTap: _onItemTapped,
+              onTap: (int index) => { _onItemTapped(index, context) },
               backgroundColor: Colors.transparent,
               elevation: 0,
             ),
@@ -125,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 120.0.rem(),
           height: 120.0.rem(),
           child: GestureDetector(
-            onTap: () { },
+            onTap: () { _onItemTapped(2, context); },
             behavior: HitTestBehavior.opaque,
             child: Container(
               decoration: BoxDecoration(

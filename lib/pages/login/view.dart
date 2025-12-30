@@ -161,7 +161,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   ShinyButton(
                     disabled: !state.isValid.value,
-                    onPressed: () { print('>>>>>>>>>>>> login'); },
+                    onPressed: logic.login,
                     child: Ink(
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(vertical: 12.0.rem()),

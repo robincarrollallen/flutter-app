@@ -5,7 +5,7 @@ import '/theme/index.dart';
 import '/theme/type.dart';
 
 class AppState {
-  final token = ''.obs; // 令牌
+  final token = PersistentRx<String>('token', ''); // 令牌
   final currentTheme = themes[THEME.style25.key].obs; // 当前主题
   final _localeStorage = PersistentRx<Map<String, dynamic>>('locale_data', {
     'languageCode': 'en',
